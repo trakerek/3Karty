@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3Karty</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>Gra: 3Karty</h1>
+    </div>
+    <button class="opis" onclick="pokazopis()">Opis</button>
+
+    <div class="motyw">
+      Motyw:
+    </div>
+    <div class="motyw2">
+      <div class="czerwony">
+        <div class="cz"></div>
+        <div class="bl"></div>
+      </div>
+      <div class="krol">
+        <div class="krolcz"></div>
+        <div class="krolbl"></div>
+      </div>
+      <div class="mot">
+        <div class="mot1"></div>
+        <div class="mot2"></div>
+      </div>
+    </div>
+    <div class="zasady">
+      <h5>
+        Oto gra w 3 karty: 2 karty sa czarne 1 karta jest czerowna zgadnij
+        czerwona
+      </h5>
+    </div>
+    <div class="ile">0</div>
+    <div class="gra">
+      <div class="karta" id="karta1"></div>
+      <div class="karta" id="karta3"></div>
+      <div class="karta" id="karta2"></div>
+    </div>
+    <div id="wynik"><b> </b></div>
+    <div class="poz">Poziom Trudnosci:</div>
+    <div id="poziom"></div>
+    <h3 class="ilosc">
+      Ilosc Tasowań:
+      <div class="tas">1</div>
+    </h3>
+    <input
+      type="range"
+      id="slider"
+      class="slider"
+      step="1"
+      min="1"
+      max="20"
+      value="1"
+      onchange="tas()"
+    />
+    <h3 class="szybkosc">
+      Szybkość:
+      <div class="szyb">0.5</div>
+    </h3>
+    <input
+      type="range"
+      id="slider2"
+      class="slider"
+      step="0.1"
+      min="0.1"
+      max="1"
+      value="0.5"
+      onchange="szybkosc()"
+    />
+    <button class="start" onclick="start()">START</button>
+    <div class="strike">0</div>
+    <img src="img.gif" class="ogien" />
+    <script src="script.js"></script>
+  </body>
+</html>

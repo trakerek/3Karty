@@ -1,0 +1,320 @@
+html,
+body {
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #7030fa,
+    #5b62fa,
+    #87b1fa,
+    #8e94fa,
+    #8258dd
+  );
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: medium;
+  /* margin: 10px; */
+}
+
+@keyframes shrink {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0.01);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0.01);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.shrink-animation {
+  transform-origin: center;
+  animation: shrink 0.5s ease-in-out;
+}
+
+.expand-animation {
+  transform-origin: center;
+  animation: expand 0.5s ease-in-out;
+}
+
+.zasady {
+  position: absolute;
+  left: 30%;
+  display: none;
+  font-size: 30px;
+  margin-top: 50px;
+}
+#poziom {
+  position: absolute;
+  left: 27%;
+  top: 10%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.slider::-webkit-slider-runnable-track {
+  background: #a344eb; /* Kolor toru (zielony) */
+  height: 20px; /* Wysokość toru */
+  border-radius: 20px; /* Zaokrąglenie rogów */
+  border: black solid 2px; /* Ramka toru */
+}
+
+/* Stylowanie uchwytu (kropki) suwaka w Webkit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Usunięcie domyślnego wyglądu uchwytu */
+  background-color: white; /* Kolor kropki (pomarańczowy) */
+  border: 2px solid white; /* Obwódka uchwytu */
+  border-radius: 50%; /* Zaokrąglenie uchwytu, tworzy kropkę */
+  width: 20px; /* Szerokość uchwytu */
+  height: 20px; /* Wysokość uchwytu */
+  cursor: pointer; /* Kursor wskazujący */
+}
+
+.karta {
+  box-shadow: darkblue 8px 8px 12px;
+  flex: 1;
+  /* border-radius: 40px; */
+  background-color: black;
+  width: 200px;
+  height: 400px;
+  transition: transform 1s ease;
+}
+
+#karta1 {
+  background-color: black;
+  left: 20%;
+}
+
+#karta2 {
+  background-color: black;
+  left: 45%;
+}
+
+#karta3 {
+  background-color: red;
+  right: 20%;
+}
+.karta:hover {
+  transform: scale(1.1);
+}
+.karta1:hover {
+  transform: scale(1.1);
+}
+.karta2:hover {
+  transform: scale(1.1);
+}
+.karta3:hover {
+  transform: scale(1.1);
+}
+.gra {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25%;
+  margin: 100px auto;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  height: 500px;
+  width: 1200px;
+}
+
+.opis,
+.start {
+  background-color: #d58dd8;
+  color: white;
+  width: 200px;
+  border-radius: 40px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: solid #8b639d 5px;
+}
+.opis:hover,
+.start:hover {
+  transform: scale(1.1);
+  background-color: #d58dd8;
+  box-shadow: #8b639d 2px 2px 5px;
+  color: #e4d2f3;
+}
+#wynik {
+  position: absolute;
+  left: 46.5%;
+  margin-top: -120px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.start {
+  position: absolute;
+  left: 45%;
+  margin-top: -50px;
+}
+#slider {
+  position: absolute;
+  left: 19%;
+  top: 18%;
+  width: 200px;
+}
+.strike {
+  position: absolute;
+  left: 60%;
+  top: 86.5%;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: #7030fa 2px 2px 5px;
+}
+.ogien {
+  position: absolute;
+  left: 62%;
+  top: 84%;
+  font-size: 50px;
+  font-weight: bold;
+  width: 80px;
+  text-shadow: #7030fa 2px 2px 5px;
+}
+#slider2 {
+  position: absolute;
+  left: 19%;
+  top: 23%;
+  width: 200px;
+}
+.poz {
+  position: absolute;
+  left: 14%;
+  top: 10%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.ilosc {
+  position: absolute;
+  left: 7%;
+  top: 14%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.szybkosc {
+  position: absolute;
+  left: 10%;
+  top: 19%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.tas {
+  position: absolute;
+  left: 108%;
+  top: 10%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.szyb {
+  position: absolute;
+  left: 105%;
+  top: 8%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.ile {
+  position: absolute;
+  top: 20%;
+  left: 49%;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: #7030fa 2px 2px 5px;
+}
+.karta1 {
+  order: 1;
+}
+.karta2 {
+  order: 3;
+}
+.karta3 {
+  order: 2;
+}
+.motyw{
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 4%;
+  left: 75%;
+}
+.motyw2{
+  text-align: center;
+  font-size: 30px;
+  width: 650px;
+  height: 200px;
+  position: absolute;
+  top: 8%;
+  left: 60%;
+  background-color: #d58dd8;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+  border-radius: 20px;
+}
+.czerwony {
+  width: 200px;
+  height: 200px;
+  order: 1;
+  border-radius: 20px;
+  display: flex;
+}
+.cz {
+  background-color: red;
+  border-radius: 20px;
+  width: 100px;
+  height: 200px;
+}
+.bl {
+  background-color: black;
+  border-radius: 20px;
+  width: 100px;
+  height: 200px;
+}
+.krol {
+  order: 2;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+}
+.krolcz {
+  width: 100px;
+  border-radius: 20px;
+  height: 200px;
+  background-color: red;
+}
+.krolbl {
+  width: 100px;
+  border-radius: 20px;
+  height: 200px;
+  background-color: black;
+}
+.mot {
+  order: 3;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+}
+.mot1 {
+  width: 150px;
+  border-radius: 20px;
+  height: 200px;
+}
+.mot2 {
+  width: 150px;
+  border-radius: 20px;
+  height: 200px;
+}
+
