@@ -4,10 +4,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
-}
-
-body {
+  overflow-x: hidden;
   background: linear-gradient(
     135deg,
     #7030fa,
@@ -19,9 +16,8 @@ body {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
   font-size: medium;
-  /* margin: 10px; */
+  box-sizing: border-box;
 }
-
 @keyframes shrink {
   0% {
     transform: scaleX(1);
@@ -52,59 +48,59 @@ body {
 
 .zasady {
   position: absolute;
-  left: 30%;
+  left: 25vw;
+  top: 14vh;
+  text-align: center;
   display: none;
-  font-size: 30px;
-  margin-top: 50px;
+  font-size: 2vw;
+  margin-top: 28vw;
 }
 #poziom {
   position: absolute;
-  left: 27%;
-  top: 10%;
-  font-size: 30px;
+  left: 26vw;
+  top: 10vh;
+  font-size: 2vw;
   font-weight: bold;
 }
 .slider::-webkit-slider-runnable-track {
   background: #a344eb; /* Kolor toru (zielony) */
-  height: 20px; /* Wysokość toru */
-  border-radius: 20px; /* Zaokrąglenie rogów */
-  border: black solid 2px; /* Ramka toru */
+  height: 1.8vh; /* Wysokość toru */
+  border-radius: 1vw; /* Zaokrąglenie rogów */
+  border: black solid 0.2vw; /* Ramka toru */
 }
-
 /* Stylowanie uchwytu (kropki) suwaka w Webkit (Chrome, Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; /* Usunięcie domyślnego wyglądu uchwytu */
   background-color: white; /* Kolor kropki (pomarańczowy) */
-  border: 2px solid white; /* Obwódka uchwytu */
-  border-radius: 50%; /* Zaokrąglenie uchwytu, tworzy kropkę */
-  width: 20px; /* Szerokość uchwytu */
-  height: 20px; /* Wysokość uchwytu */
+  border: 0.3vw solid white; /* Obwódka uchwytu */
+  border-radius: 5vw; /* Zaokrąglenie uchwytu, tworzy kropkę */
+  width: clamp(15px, 3vw, 30px);   /* min 15px, rośnie do 3vw, max 30px */
+  height: clamp(15px, 3vw, 30px);
   cursor: pointer; /* Kursor wskazujący */
 }
-
 .karta {
-  box-shadow: darkblue 8px 8px 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: darkblue 1vw 1vw 4vw;
   flex: 1;
   /* border-radius: 40px; */
   background-color: black;
-  width: 200px;
-  height: 400px;
+  width: 10vw;
+  height: 40vh;
   transition: transform 1s ease;
 }
 
 #karta1 {
   background-color: black;
-  left: 20%;
 }
 
 #karta2 {
   background-color: black;
-  left: 45%;
 }
 
 #karta3 {
   background-color: red;
-  right: 20%;
 }
 .karta:hover {
   transform: scale(1.1);
@@ -119,116 +115,129 @@ input[type="range"]::-webkit-slider-thumb {
   transform: scale(1.1);
 }
 .gra {
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25%;
-  margin: 100px auto;
-  margin-top: 150px;
-  margin-bottom: 50px;
-  height: 500px;
-  width: 1200px;
+  gap: 5vw;
+  top:30vh;
+  left: 26.5vw;
+  width: 50vw;
 }
 
 .opis,
 .start {
   background-color: #d58dd8;
   color: white;
-  width: 200px;
-  border-radius: 40px;
-  height: 60px;
-  font-size: 30px;
+  width: 10vw;
+  border-radius: 1vw;
+  height: 7vh;
+  font-size: 3vh;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  border: solid #8b639d 5px;
+  border: solid #8b639d 0.5vh;
 }
 .opis:hover,
 .start:hover {
   transform: scale(1.1);
   background-color: #d58dd8;
-  box-shadow: #8b639d 2px 2px 5px;
-  color: #e4d2f3;
+  box-shadow: #8b639d 0.5vw 0.5vw 2vw;
+  color: #4d384a;
 }
 #wynik {
   position: absolute;
-  left: 46.5%;
-  margin-top: -120px;
-  font-size: 30px;
+  left: 47vw;
+  margin-top: -10vh;
+  font-size: 3vh;
   font-weight: bold;
+}
+:root {
+  --poz-ile-h: 12.5vh;
+  --poz-szyb-h: 20.5vh;
+  --slid-ile-h: 16.5vh;
+  --slid2-szyb-h: 24.5vh;
 }
 .start {
   position: absolute;
-  left: 45%;
-  margin-top: -50px;
+  left: 45vw;
+  top: 85vh;
+}
+.opis {
+  position: absolute;
+  left: 45vw;
+  top: 8vh;
+}
+.title1 {
+  position: absolute;
+  left: 45.5vw;
+  top: 1vh;
+  font-size: 3vh;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 #slider {
   position: absolute;
-  left: 19%;
-  top: 18%;
-  width: 200px;
+  left: 20vw;
+  top: var(--slid-ile-h);
+  width: 10vw;
 }
 .strike {
   position: absolute;
-  left: 60%;
-  top: 86.5%;
-  font-size: 50px;
+  left: 60vw;
+  top: 84.5vh;
+  font-size: 3vw;
   font-weight: bold;
   text-shadow: #7030fa 2px 2px 5px;
 }
 .ogien {
   position: absolute;
-  left: 62%;
-  top: 84%;
-  font-size: 50px;
+  left: 62vw;
+  top: 83vh;
+  font-size: 3vw;
   font-weight: bold;
-  width: 80px;
+  width: 4vw;
   text-shadow: #7030fa 2px 2px 5px;
 }
 #slider2 {
   position: absolute;
-  left: 19%;
-  top: 23%;
-  width: 200px;
+  left: 20vw;
+  top: var(--slid2-szyb-h);
+  width: 10vw;
 }
 .poz {
   position: absolute;
-  left: 14%;
-  top: 10%;
-  font-size: 30px;
+  left: 10vw;
+  top: 10vh;
+  font-size: 2vw;
   font-weight: bold;
 }
 .ilosc {
   position: absolute;
-  left: 7%;
-  top: 14%;
-  font-size: 30px;
+  left: 10vw;
+  top: var(--poz-ile-h);
+  font-size: 1.5vw;
   font-weight: bold;
 }
 .szybkosc {
   position: absolute;
   left: 10%;
-  top: 19%;
-  font-size: 30px;
+  top: var(--poz-szyb-h);
+  font-size: 1.5vw;
   font-weight: bold;
 }
 .tas {
   position: absolute;
-  left: 108%;
-  top: 10%;
-  font-size: 30px;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 .szyb {
   position: absolute;
-  left: 105%;
-  top: 8%;
-  font-size: 30px;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 .ile {
   position: absolute;
-  top: 20%;
-  left: 49%;
-  font-size: 40px;
+  top: 15vh;
+  left: 49vw;
+  font-size: 2vw;
   font-weight: bold;
   text-shadow: #7030fa 2px 2px 5px;
 }
@@ -241,80 +250,110 @@ input[type="range"]::-webkit-slider-thumb {
 .karta3 {
   order: 2;
 }
-.motyw{
+.motyw {
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
   position: absolute;
-  top: 4%;
-  left: 75%;
+  top: 2vh;
+  left: 75vw;
 }
-.motyw2{
+.motyw2 {
   text-align: center;
-  font-size: 30px;
-  width: 650px;
-  height: 200px;
+  font-size: 1.5vw;
+  width: 33.5vw;
+  height: 20vh;
   position: absolute;
-  top: 8%;
-  left: 60%;
+  top: 8vh;
+  left: 61vw;
   background-color: #d58dd8;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5%;
   border-radius: 20px;
 }
+:root {
+  --motyw-w: 10vw;
+  --motyw-h: 20vh;
+  --motyw-1w: 5vw;
+  --motyw-1h: 20vh;
+  --radius: 1vw;
+}
 .czerwony {
-  width: 200px;
-  height: 200px;
+  width: var(--motyw-w);
+  height: var(--motyw-h);
   order: 1;
-  border-radius: 20px;
+  border-radius: var(--radius);
   display: flex;
 }
 .cz {
   background-color: red;
-  border-radius: 20px;
-  width: 100px;
-  height: 200px;
+  border-radius: var(--radius);
+  width: var(--motyw-1w);
+  height: var(--motyw-1h);
 }
 .bl {
   background-color: black;
-  border-radius: 20px;
-  width: 100px;
-  height: 200px;
+  border-radius: var(--radius);
+  width: var(--motyw-1w);
+  height: var(--motyw-1h);
 }
 .krol {
   order: 2;
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
+  width: var(--motyw-w);
+  height: var(--motyw-h);
+  border-radius: var(--radius);
   display: flex;
 }
 .krolcz {
-  width: 100px;
-  border-radius: 20px;
-  height: 200px;
+  width: var(--motyw-1w);
+  border-radius: var(--radius);
+  height: var(--motyw-1h);
   background-color: red;
 }
 .krolbl {
-  width: 100px;
-  border-radius: 20px;
-  height: 200px;
+  width: var(--motyw-1w);
+  border-radius: var(--radius);
+  height: var(--motyw-1h);
   background-color: black;
 }
 .mot {
   order: 3;
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
+  width: var(--motyw-w);
+  height: var(--motyw-h);
+  border-radius: var(--radius);
   display: flex;
 }
 .mot1 {
-  width: 150px;
-  border-radius: 20px;
-  height: 200px;
+  width: var(--motyw-1w);
+  border-radius: var(--radius);
+  height: var(--motyw-1h);
 }
 .mot2 {
-  width: 150px;
-  border-radius: 20px;
-  height: 200px;
+  width: var(--motyw-1w);
+  border-radius: var(--radius);
+  height: var(--motyw-1h);
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 4vw;
+  }
+  .gra {
+    grid-template-columns: 1fr;
+    gap: 5vh;
+  }
+  .karta {
+    width: 60vw;
+    height: 30vh;
+  }
+  .motyw2 {
+    width: 90vw;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+  .opis,
+  .start {
+    width: 60vw;
+    font-size: 5vw;
+  }
+}
