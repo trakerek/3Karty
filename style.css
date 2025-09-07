@@ -84,10 +84,10 @@ input[type="range"]::-webkit-slider-thumb {
   flex-wrap: wrap;
   box-shadow: darkblue 1vw 1vw 4vw;
   flex: 1;
-  /* border-radius: 40px; */
+  border-radius: 40px;
   background-color: black;
   width: 10vw;
-  height: 40vh;
+  height: 30vh;
   transition: transform 1s ease;
 }
 
@@ -118,12 +118,12 @@ input[type="range"]::-webkit-slider-thumb {
   position: absolute;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5vw;
-  top:30vh;
-  left: 26.5vw;
+  gap: 10vw;
+  top:40vh;
+  left: 25vw;
   width: 50vw;
 }
-
+.gra.disabled { pointer-events: none; }
 .opis,
 .start {
   background-color: #d58dd8;
@@ -146,7 +146,7 @@ input[type="range"]::-webkit-slider-thumb {
 #wynik {
   position: absolute;
   left: 47vw;
-  margin-top: -10vh;
+  top: 35vw;
   font-size: 3vh;
   font-weight: bold;
 }
@@ -201,6 +201,7 @@ input[type="range"]::-webkit-slider-thumb {
   left: 20vw;
   top: var(--slid2-szyb-h);
   width: 10vw;
+  direction: rtl;
 }
 .poz {
   position: absolute;
@@ -333,27 +334,108 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: var(--radius);
   height: var(--motyw-1h);
 }
+.zasady {
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+
+}
 
 @media (max-width: 768px) {
   body {
     font-size: 4vw;
   }
   .gra {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 5vh;
+    left: 15vw;
   }
   .karta {
-    width: 60vw;
+    width: 20vw;
     height: 30vh;
   }
   .motyw2 {
-    width: 90vw;
-    height: auto;
-    grid-template-columns: 1fr;
+    top: 80vh;
+    width: 40vw;
+    height: 10vh;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+  .czerwony,.krol,.mot{
+    width: auto;
+    height: auto;
+  }
+
   .opis,
   .start {
-    width: 60vw;
+    width: 30vw;
     font-size: 5vw;
+    left: 40vw;
+  }
+  .start{
+    top: 30vh;
+  }
+  .title1{
+    left: 40vw;
+  }
+  .motyw{
+    top: 75vh;
+    font-size: 4vw;
+  }
+  .ile{
+    font-size: 10vw;
+    left: 52vw;
+  }
+  .panel{
+    font-size: 30vw;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .strike, .ogien{
+    top: 75vh;
+    left: 50vw;
+    font-size: 10vw;
+  }
+  .ogien{
+    left: 58vw;
+    height: 5vh;
+    width: 5vw;
+  }
+  .zasady{
+    font-size: 5vw;
+    top: 8vh;
+    padding: 10vw;
+    left: 3vw;
+  }
+  .slider{
+    position: absolute;
+    left: 10vw;
+    top: 80vh;
+  }
+  .poz{
+    top: 75vh;
+    font-size: 4vw;
+  }
+  .ilosc,.tas{
+    top:80vh;
+    font-size: 4vw;
+  }
+  .tas{
+    top: 3vh;
+  }
+  .szybkosc,.szyb{
+    top: 88vh;
+    font-size: 4vw;
+  }
+  .szyb{
+    top: 3vh;
+  }
+  #slider{
+    top: 82.5vh;
+    left: 40vw;
+    width: 20vw;
+  }
+#slider2{
+    top: 90.5vh;
+    left: 40vw;
+    width: 20vw;
   }
 }
