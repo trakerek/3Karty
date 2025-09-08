@@ -37,5 +37,3 @@ Twoim zadaniem jest odnaleźć **czerwoną kartę** po serii tasowań.
 - Po tasowaniu kliknij wybraną kartę.
 
 ---
-
-## 📂 Struktura projektu
