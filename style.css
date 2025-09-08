@@ -45,7 +45,11 @@ body {
   transform-origin: center;
   animation: expand 0.5s ease-in-out;
 }
-
+#poziom{
+  top: 10vh;
+  font-size: 5vw;
+  left: 5vw;
+}
 .zasady {
   position: absolute;
   left: 25vw;
@@ -87,7 +91,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 40px;
   background-color: black;
   width: 10vw;
-  height: 30vh;
+  height: 42.5vh;
   transition: transform 1s ease;
 }
 
@@ -119,11 +123,12 @@ input[type="range"]::-webkit-slider-thumb {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10vw;
-  top:40vh;
+  top:32vh;
   left: 25vw;
   width: 50vw;
 }
 .gra.disabled { pointer-events: none; }
+
 .opis,
 .start {
   background-color: #d58dd8;
@@ -145,9 +150,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 #wynik {
   position: absolute;
-  left: 47vw;
-  top: 35vw;
-  font-size: 3vh;
+  left: 45vw;
+  top: 20vh;
+  font-size: 5vh;
   font-weight: bold;
 }
 :root {
@@ -346,25 +351,30 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 4vw;
   }
   .gra {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5vh;
-    left: 15vw;
+    top: 40vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15vw;
+    left: 12vw;
+    width: 50vw;
   }
   .karta {
-    width: 20vw;
-    height: 30vh;
+    width: 15vw;
+    height: 20vh;
   }
   .motyw2 {
     top: 80vh;
     width: 40vw;
-    height: 10vh;
+    height: 5vh;
     grid-template-columns: 1fr 1fr 1fr;
   }
   .czerwony,.krol,.mot{
     width: auto;
     height: auto;
   }
-
+  .cz, .bl, .mot1, .mot2, .krolbl, .krolcz{
+    width: 5vw;
+    height: 5vh;
+  }
   .opis,
   .start {
     width: 30vw;
@@ -372,7 +382,7 @@ input[type="range"]::-webkit-slider-thumb {
     left: 40vw;
   }
   .start{
-    top: 30vh;
+    top: 22vh;
   }
   .title1{
     left: 40vw;
@@ -384,6 +394,7 @@ input[type="range"]::-webkit-slider-thumb {
   .ile{
     font-size: 10vw;
     left: 52vw;
+    /* top: 10vh; */
   }
   .panel{
     font-size: 30vw;
@@ -413,6 +424,7 @@ input[type="range"]::-webkit-slider-thumb {
   .poz{
     top: 75vh;
     font-size: 4vw;
+    left: 1vw;
   }
   .ilosc,.tas{
     top:80vh;
@@ -438,4 +450,13 @@ input[type="range"]::-webkit-slider-thumb {
     left: 40vw;
     width: 20vw;
   }
+#poziom{
+  top: 75vh;
+  font-size: 4vw;
+  left: 35vw;
+}
+#wynik{
+  top: 65vh;
+  left: 35vw;
+}
 }

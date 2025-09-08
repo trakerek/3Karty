@@ -12,11 +12,21 @@ var czy = false;
 var mot1 = document.getElementsByClassName("czerwony")[0];
 var mot2 = document.getElementsByClassName("krol")[0];
 var mot3 = document.getElementsByClassName("mot")[0];
+const board = document.querySelector('.gra');
+function blockClicks() {
+  board.classList.add('disabled');
+  czy = false;
+}
+
+function allowClicks() {
+  board.classList.remove('disabled');
+  czy = true;
+}
 
 const motywydiv = [mot1, mot2, mot3];
 const motywy = ["url(czarna.png)", "url(czerwona.png)", "none"];
 
-let kolorcz = motywy[2];  
+let kolorcz = motywy[2];
 let kolorbl = motywy[2];
 
 for (let k = 0; k < motywydiv.length; k++) {
@@ -102,7 +112,6 @@ function animacja(kp) {
   }, 1000);
 }
 
-
 function animacja2(kp) {
   kp.classList.add("shrink-animation");
   setTimeout(() => {
@@ -115,14 +124,14 @@ function animacja2(kp) {
     kp.classList.remove("shrink-animation");
   }, 500);
 
-  setTimeout(() => {
-  }, 1000);
+  setTimeout(() => {}, 1000);
 }
 
 var czy = false;
 function start() {
-  var slider = document.getElementById("slider").value;
-  czy = false;
+  blockClicks();
+  var slider = parseInt(document.getElementById("slider").value, 10);
+  var speed  = parseFloat(document.getElementById("slider2").value);
   let delay = 0;
   buttons.forEach((kp) => {
     animacja(kp);
@@ -148,43 +157,43 @@ function start() {
 
         if (kp.style.order == 1 && col[0] == 1) {
           setTimeout(() => {
-            kp.style.transform = `translateX(0px)`;
+            kp.style.transform = `translateX(0%)`;
           }, 2000);
         } else if (kp.style.order == 1 && col[0] == 2) {
           setTimeout(() => {
-            kp.style.transform = `translateX(500px)`;
+            kp.style.transform = `translateX(200%)`;
           }, 2000);
         } else if (kp.style.order == 1 && col[0] == 3) {
           setTimeout(() => {
-            kp.style.transform = `translateX(1000px)`;
+            kp.style.transform = `translateX(400%)`;
           }, 2000);
         }
 
         if (kp.style.order == 2 && col[1] == 1) {
           setTimeout(() => {
-            kp.style.transform = `translateX(-500px)`;
+            kp.style.transform = `translateX(-200%)`;
           }, 2000);
         } else if (kp.style.order == 2 && col[1] == 2) {
           setTimeout(() => {
-            kp.style.transform = `translateX(0px)`;
+            kp.style.transform = `translateX(0%)`;
           }, 2000);
         } else if (kp.style.order == 2 && col[1] == 3) {
           setTimeout(() => {
-            kp.style.transform = `translateX(500px)`;
+            kp.style.transform = `translateX(200%)`;
           }, 2000);
         }
 
         if (kp.style.order == 3 && col[2] == 1) {
           setTimeout(() => {
-            kp.style.transform = `translateX(-1000px)`;
+            kp.style.transform = `translateX(-400%)`;
           }, 2000);
         } else if (kp.style.order == 3 && col[2] == 2) {
           setTimeout(() => {
-            kp.style.transform = `translateX(-500px)`;
+            kp.style.transform = `translateX(-200%)`;
           }, 2000);
         } else if (kp.style.order == 3 && col[2] == 3) {
           setTimeout(() => {
-            kp.style.transform = `translateX(0px)`;
+            kp.style.transform = `translateX(0%)`;
           }, 2000);
         }
 
@@ -199,34 +208,32 @@ function start() {
     }, delay);
     delay += 1000;
   }
-  czy = true;
+  const unlockAfter = ((slider - 1) * 1000) + 2000 + (speed * 1000) + 150; // mały bufor
+  setTimeout(allowClicks, unlockAfter);
 }
 
-for (let k = 0; k < buttons.length; k++) {
-  buttons[k].addEventListener("click", function () {
-    if (!czy) return;
-    czy = false;
+buttons.forEach((kp, idx) => {
+  kp.addEventListener("click", () => {
+    if (!czy) return; 
+    blockClicks(); 
 
-    buttons.forEach((kp) => {
-      animacja2(kp);
-    });
+    animacja2(kp);
 
-    console.log(`Div numer ${k + 1} został kliknięty!`);
-    if (k === 2) {
+    if (idx === 2) {
       wynik.innerHTML = "Wygrales!";
       count++;
-      strike.innerHTML = count;
     } else {
       wynik.innerHTML = "Przegrales!";
       count = 0;
-      strike.innerHTML = count;
     }
+    strike.innerHTML = count;
 
     setTimeout(() => {
-      buttons.forEach((kp) => {
-        kp.style.transition = "transform 2s ease-in-out";
-        kp.style.transform = "translateX(0px)";
+      buttons.forEach((btn) => {
+        btn.style.transition = "transform 2s ease-in-out";
+        btn.style.transform = "translateX(0px)";
       });
     }, 2000);
   });
-}
+});
+
