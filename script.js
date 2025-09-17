@@ -245,6 +245,7 @@ var czy = false;
  * @param {number} speed - speed of the animations
  */
 function start() {
+  if(czy2 == false){return 0}
   blockClicks();
   var slider = parseInt(document.getElementById("slider").value, 10);
   var speed = parseFloat(document.getElementById("slider2").value);
@@ -359,7 +360,8 @@ buttons.forEach((kp, idx) => {
         },2000);
       })  
     },2000);
+    setTimeout(() =>{
     czy2 = true;
-    
+    },8000)
   });
 });
